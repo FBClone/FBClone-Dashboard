@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "polymer": "^2.6.0",
-    "polymerfire": "^2.2.1"
+    "polymerfire": "^2.2.1",
+    "fbclone-signup-module": "git@github.com:FBClone/fbclone-signup-module.git#master"
   }
 }

@@ -1,6 +1,8 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="bower_components/polymerfire/firebase-app.html">
 
+<link rel="import" href="bower_components/fbclone-signup-module/fbclone-signup-module.html">
+
 <dom-module id = "fbclone-dashboard">
     <template>
         <style>
@@ -9,7 +11,13 @@
             }
         </style>
 
-        Hello!
+        <fbclone-signup-module
+                first-name="{{firstName}}"
+                last-name="{{lastName}}"
+                age="{{age}}"
+                email="{{email}}"
+                id="signUpModule">
+        </fbclone-signup-module>
     </template>
 
     <script>
