@@ -7,9 +7,19 @@
     <template>
         <style>
             #signUpModule {
-                border: 1px black solid;
+
+                border: thick black solid;
+                background-color: lightblue;
             }
         </style>
+
+        <firebase-app
+            api-key="AIzaSyDatjYxZXgqp2WkP1jtycDsgbrmOIVBL4Q"
+            database-url="https://fbclone-c6f27.firebaseio.com"
+            auth-domain="fbclone-c6f27.firebaseapp.com"
+            storage-bucket="fbclone-c6f27.appspot.com"
+            messaging-sender-id="284119776532">
+        </firebase-app>
 
         <fbclone-signup-module
                 first-name="{{firstName}}"
