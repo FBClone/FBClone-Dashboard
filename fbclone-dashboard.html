@@ -1,5 +1,6 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="bower_components/polymerfire/firebase-auth.html">
 
 <link rel="import" href="bower_components/fbclone-signup-module/fbclone-signup-module.html">
 
@@ -8,33 +9,74 @@
         <style>
             #signUpModule {
 
-                border: thick black solid;
-                background-color: lightblue;
             }
+
         </style>
 
         <firebase-app
-            api-key="AIzaSyDatjYxZXgqp2WkP1jtycDsgbrmOIVBL4Q"
-            database-url="https://fbclone-c6f27.firebaseio.com"
-            auth-domain="fbclone-c6f27.firebaseapp.com"
-            storage-bucket="fbclone-c6f27.appspot.com"
-            messaging-sender-id="284119776532">
+            name="[[appName]]"
+            api-key="[[apiKey]]"
+            database-url="[[databaseUrl]]"
+            auth-domain="[[authDomain]]"
+            storage-bucket="[[storageBucket]]"
+            messaging-sender-id="[[messagingSenderId]]">
         </firebase-app>
 
-        <fbclone-signup-module
-                first-name="{{firstName}}"
-                last-name="{{lastName}}"
-                age="{{age}}"
-                email="{{email}}"
-                id="signUpModule">
-        </fbclone-signup-module>
+        <firebase-auth
+            app-name="[[appName]]"
+            provider="google">
+        </firebase-auth>
+
+        <fbclone-signup-module></fbclone-signup-module>
     </template>
 
     <script>
         Polymer({
             is: "fbclone-dashboard",
 
-            properties: {}
+            properties: {
+                appName: {
+                    type: String,
+                    notify: true,
+                    readOnly: true,
+                    value: "fbcDB"
+                },
+
+                apiKey: {
+                    type: String,
+                    notify: true,
+                    readOnly: true,
+                    value: "AIzaSyDatjYxZXgqp2WkP1jtycDsgbrmOIVBL4Q"
+                },
+
+                databaseUrl: {
+                    type: String,
+                    notify: true,
+                    readOnly: true,
+                    value: "https://fbclone-c6f27.firebaseio.com"
+                },
+
+                authDomain: {
+                    type: String,
+                    notify: true,
+                    readOnly: true,
+                    value: "fbclone-c6f27.firebaseapp.com"
+                },
+
+                storageBucket: {
+                    type: String,
+                    notify: true,
+                    readOnly: true,
+                    value: "fbclone-c6f27.appspot.com"
+                },
+
+                messagingSenderId: {
+                    type: String,
+                    notify: true,
+                    readOnly: true,
+                    value: "284119776532"
+                }
+            }
         });
     </script>
 </dom-module>
